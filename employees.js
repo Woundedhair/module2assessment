@@ -20,7 +20,15 @@
 */
 
 //CODE HERE
-
+class Employee {
+    constructor(name, shifts) {
+        this.name = name;
+        this.shifts = shifts;
+    }
+    getSchedule() {
+        return `${this.name} works on ${this.shifts}`;
+    }
+}
 
 
 /*
@@ -34,14 +42,14 @@
 */
 
 //CODE HERE
-
+const empOne = new Employee("Akintomiwa", "weekday mornings");
 /*
     Call the `getSchedule` method on the
     `empOne` instance.
 */
 
 //CODE HERE
-
+console.log(empOne.getSchedule());
 
 
 
@@ -69,7 +77,18 @@
 */
 
 //CODE HERE
-
+ class Manager extends Employee {
+    constructor(name, shifts, employees) {
+        super(name, shifts);
+        this.employees = [employees];
+    }
+    
+    getEmployees() {
+        return `${this.name} manages ${this.employees}`;
+    }
+    addEmployee(emp) {
+    }
+ }
 
 
 /*
@@ -84,7 +103,7 @@
 */
 
 //CODE HERE
-
+const manager = new Manager("Komolafe", "Weekday mornings", "Stephen and Pope");
 
 /*
     Call the `getEmployees` method on the
@@ -92,7 +111,7 @@
 */
 
 //CODE HERE
-
+console.log(manager.getEmployees());
 /*
     Call the `addEmployee` method on the 
     `manager` variable passing in the string 
@@ -100,7 +119,7 @@
 */
 
 //CODE HERE 
-
+console.log(manager.addEmployee('Coach'));
 /*
     Call the `getEmployees` method on the
     `manager` varible again to confirm 
@@ -108,3 +127,4 @@
 */
 
 //CODE HERE
+console.log(manager.getEmployees());
